@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mary 工作成果总结｜徐麦瑞</title>
+  <style>
+    :root {
+      --bg: #eef2ff;
+      --bg-2: #f8faff;
+      --text: #1d2340;
+      --muted: #637093;
+      --line: rgba(96, 91, 236, 0.14);
+      --line-strong: rgba(96, 91, 236, 0.24);
+      --paper: rgba(255,255,255,.82);
+      --paper-strong: rgba(255,255,255,.94);
+      --indigo: #5f5cf0;
+      --violet: #8a69ff;
+      --cyan: #59c7ff;
+      --blue: #4b85ff;
+      --success: #28b485;
+      --shadow: 0 24px 70px rgba(79, 90, 196, .18);
+      --shadow-soft: 0 12px 32px rgba(91, 96, 230, .12);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --maxw: 1200px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.7;
+      background:
+        radial-gradient(circle at 10% 12%, rgba(138,105,255,.16), transparent 24%),
+        radial-gradient(circle at 92% 8%, rgba(89,199,255,.16), transparent 24%),
+        radial-gradient(circle at 84% 72%, rgba(96,91,236,.14), transparent 24%),
+        linear-gradient(180deg, #f7f9ff 0%, #f2f5ff 42%, #edf3ff 100%);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    a { color: inherit; }
+
+    .page {
+      width: min(calc(100% - 36px), var(--maxw));
+      margin: 22px auto 46px;
+      position: relative;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 36px;
+      padding: 42px;
+      min-height: 380px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,.78);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.92), rgba(246,248,255,.78)),
+        linear-gradient(135deg, #5f5cf0 0%, #8568fa 58%, #66cbff 120%);
+      display: grid;
+      grid-template-columns: 1.35fr .9fr;
+      gap: 24px;
+      backdrop-filter: blur(12px);
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      pointer-events: none;
+    }
+
+    .hero::before {
+      width: 340px;
+      height: 340px;
+      top: -110px;
+      right: -80px;
+      background: radial-gradient(circle, rgba(138,105,255,.28), rgba(138,105,255,0));
+      filter: blur(4px);
+    }
+
+    .hero::after {
+      width: 400px;
+      height: 400px;
+      bottom: -190px;
+      left: 40%;
+      background: radial-gradient(circle, rgba(89,199,255,.2), rgba(89,199,255,0));
+      filter: blur(4px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      color: #4a4fce;
+      background: rgba(96,91,236,.12);
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 52px;
+      line-height: 1.08;
+      letter-spacing: -.03em;
+    }
+
+    h1 small {
+      display: block;
+      margin-top: 12px;
+      font-size: 23px;
+      color: #5c6788;
+      font-weight: 600;
+      letter-spacing: 0;
+    }
+
+    .hero-desc {
+      max-width: 690px;
+      margin: 20px 0 22px;
+      color: #505c7d;
+      font-size: 16px;
+    }
+
+    .hero-tags,
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hero-tag,
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 13px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      border: 1px solid rgba(96,91,236,.14);
+      color: #474fb4;
+      background: rgba(255,255,255,.72);
+      box-shadow: 0 8px 20px rgba(101, 110, 223, .08);
+    }
+
+    .meta-grid {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .meta-item {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.68);
+      border: 1px solid rgba(255,255,255,.8);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .meta-label {
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: 6px;
+    }
+
+    .meta-value {
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .hero-side {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 16px;
+      align-content: stretch;
+    }
+
+    .profile-card,
+    .highlight-card,
+    .glass-card {
+      padding: 24px;
+      border-radius: 26px;
+      background: rgba(255,255,255,.74);
+      border: 1px solid rgba(255,255,255,.82);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(10px);
+    }
+
+    .avatar {
+      width: 78px;
+      height: 78px;
+      border-radius: 22px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: 30px;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--indigo), var(--violet));
+      box-shadow: 0 14px 30px rgba(96,91,236,.28);
+      margin-bottom: 14px;
+    }
+
+    .profile-title {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .profile-subtitle {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .quote {
+      padding-top: 12px;
+      border-top: 1px dashed rgba(96,91,236,.2);
+      color: #56617e;
+      font-size: 14px;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .kpi-box {
+      padding: 14px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(238,241,255,.92), rgba(255,255,255,.96));
+      border: 1px solid var(--line);
+    }
+
+    .kpi-box strong {
+      display: block;
+      font-size: 28px;
+      line-height: 1.1;
+      color: #4d4fcc;
+      margin-bottom: 4px;
+    }
+
+    .kpi-box span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .section {
+      margin-top: 26px;
+      padding: 28px;
+      border-radius: var(--radius-xl);
+      background: var(--paper);
+      border: 1px solid rgba(255,255,255,.8);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(12px);
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: -.02em;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 720px;
+    }
+
+    .stats-band {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .stat-card {
+      grid-column: span 2;
+      position: relative;
+      overflow: hidden;
+      padding: 20px 18px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,.94), rgba(247,249,255,.95));
+      border: 1px solid var(--line);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .stat-card:hover,
+    .project-card:hover,
+    .timeline-item:hover,
+    .matrix-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 36px rgba(91,95,239,.12);
+    }
+
+    .stat-card::after {
+      content: "";
+      position: absolute;
+      right: -28px;
+      bottom: -34px;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(138,105,255,.16), rgba(138,105,255,0));
+    }
+
+    .stat-card strong {
+      display: block;
+      font-size: 34px;
+      line-height: 1;
+      color: #454bcc;
+      margin-bottom: 10px;
+    }
+
+    .stat-card span {
+      display: block;
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .stat-card p {
+      margin: 0;
+      font-size: 13px;
+      color: #53607e;
+    }
+
+    .intro-grid,
+    .skill-layout,
+    .project-grid,
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: rgba(255,255,255,.78);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+    }
+
+    .role-summary {
+      background: linear-gradient(135deg, rgba(96,91,236,.07), rgba(138,105,255,.1));
+    }
+
+    .list {
+      margin: 0;
+      padding-left: 18px;
+      color: #4d5876;
+      font-size: 14px;
+    }
+
+    .list li + li { margin-top: 10px; }
+
+    .role-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 14px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(96,91,236,.08);
+      border: 1px solid rgba(96,91,236,.12);
+      font-weight: 700;
+      color: #4b4ec0;
+      font-size: 13px;
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 16px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 22px 22px 22px 74px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,.94), rgba(247,249,255,.96));
+      border: 1px solid var(--line);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: 34px;
+      top: 28px;
+      bottom: -18px;
+      width: 2px;
+      background: linear-gradient(180deg, rgba(96,91,236,.26), rgba(96,91,236,0));
+    }
+
+    .timeline-item:last-child::before { display: none; }
+
+    .timeline-dot {
+      position: absolute;
+      left: 24px;
+      top: 26px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--indigo), var(--violet));
+      box-shadow: 0 0 0 8px rgba(96,91,236,.1);
+    }
+
+    .timeline-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .timeline-time {
+      font-size: 13px;
+      font-weight: 700;
+      color: #4f56cc;
+    }
+
+    .timeline-company {
+      font-size: 21px;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .timeline-role {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .timeline-desc {
+      margin: 10px 0 0;
+      color: #53607c;
+      font-size: 14px;
+    }
+
+    .timeline-achievements {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #4950be;
+      background: rgba(96,91,236,.08);
+      border: 1px solid rgba(96,91,236,.12);
+    }
+
+    .skill-layout {
+      align-items: stretch;
+    }
+
+    .matrix-card {
+      padding: 22px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,.94), rgba(247,249,255,.96));
+      border: 1px solid var(--line);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .matrix-card h3 {
+      margin: 0 0 14px;
+      font-size: 20px;
+    }
+
+    .matrix-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .matrix-row {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .matrix-row strong {
+      font-size: 13px;
+      color: #4954bd;
+    }
+
+    .bar {
+      position: relative;
+      height: 12px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: rgba(96,91,236,.1);
+    }
+
+    .bar > span {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--indigo), var(--violet), var(--cyan));
+      box-shadow: 0 8px 18px rgba(96,91,236,.18);
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .skill-tag {
+      padding: 9px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.95);
+      border: 1px solid var(--line);
+      font-size: 13px;
+      color: #475372;
+      font-weight: 700;
+    }
+
+    .project-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      padding: 28px;
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(255,255,255,.95), rgba(246,248,255,.97));
+      border: 1px solid var(--line);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .project-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -50px -50px auto;
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(138,105,255,.14), rgba(138,105,255,0));
+      pointer-events: none;
+    }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: start;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .project-index {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: rgba(96,91,236,.1);
+      color: #4d54c8;
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    .project-title {
+      margin: 10px 0 8px;
+      font-size: 28px;
+      line-height: 1.2;
+      letter-spacing: -.02em;
+    }
+
+    .project-desc {
+      margin: 0;
+      color: #586480;
+      max-width: 760px;
+      font-size: 15px;
+    }
+
+    .impact-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .impact-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(96,91,236,.09), rgba(138,105,255,.12));
+      border: 1px solid rgba(96,91,236,.14);
+      color: #4450be;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .project-body {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 18px;
+    }
+
+    .do-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .do-card,
+    .result-panel,
+    .proof-panel {
+      border-radius: 22px;
+      padding: 20px;
+      background: rgba(255,255,255,.84);
+      border: 1px solid var(--line);
+    }
+
+    .do-card h4,
+    .result-panel h4,
+    .proof-panel h4 {
+      margin: 0 0 10px;
+      font-size: 17px;
+    }
+
+    .do-card p,
+    .result-panel p,
+    .proof-panel p {
+      margin: 0;
+      font-size: 14px;
+      color: #55627d;
+    }
+
+    .metric-grid {
+      display: grid;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .metric-box {
+      padding: 16px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(238,241,255,.9), rgba(255,255,255,.96));
+      border: 1px solid var(--line);
+    }
+
+    .metric-box strong {
+      display: block;
+      font-size: 30px;
+      line-height: 1;
+      color: #464cca;
+      margin-bottom: 6px;
+    }
+
+    .metric-box span,
+    .metric-box p {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .project-points {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 14px;
+      color: #51607b;
+    }
+
+    .project-points li + li { margin-top: 8px; }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+    }
+
+    .cert-card h3,
+    .edu-card h3,
+    .summary-panel h3 {
+      margin-top: 0;
+      font-size: 22px;
+    }
+
+    .cert-list,
+    .edu-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .cert-item,
+    .edu-item {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,.94), rgba(247,249,255,.96));
+      border: 1px solid var(--line);
+      color: #4f5b77;
+      font-size: 14px;
+    }
+
+    .cert-item strong,
+    .edu-item strong {
+      color: #283052;
+    }
+
+    .footer-banner {
+      margin-top: 26px;
+      position: relative;
+      overflow: hidden;
+      padding: 32px 28px;
+      border-radius: 30px;
+      color: white;
+      background: linear-gradient(135deg, #5d61ee 0%, #8669fa 58%, #66cbff 130%);
+      box-shadow: var(--shadow);
+    }
+
+    .footer-banner::before {
+      content: "";
+      position: absolute;
+      top: -80px;
+      right: -70px;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,.24), rgba(255,255,255,0));
+    }
+
+    .footer-banner h2 {
+      margin: 0 0 12px;
+      font-size: 30px;
+    }
+
+    .footer-banner p {
+      margin: 0;
+      max-width: 820px;
+      font-size: 16px;
+      color: rgba(255,255,255,.92);
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.22);
+      font-weight: 700;
+    }
+
+    .print-hint {
+      margin-top: 14px;
+      font-size: 12px;
+      color: rgba(255,255,255,.78);
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: fadeUp .7s ease forwards;
+    }
+    .delay-1 { animation-delay: .08s; }
+    .delay-2 { animation-delay: .16s; }
+    .delay-3 { animation-delay: .24s; }
+    .delay-4 { animation-delay: .32s; }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 1080px) {
+      .hero,
+      .project-body,
+      .cert-grid,
+      .intro-grid,
+      .skill-layout,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-band {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .stat-card { grid-column: span 2; }
+    }
+
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; }
+      .meta-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .matrix-row { grid-template-columns: 1fr; gap: 8px; }
+    }
+
+    @media (max-width: 680px) {
+      .page { width: min(calc(100% - 20px), var(--maxw)); margin-top: 10px; }
+      .hero, .section, .footer-banner { padding: 22px; border-radius: 24px; }
+      h1 { font-size: 36px; }
+      h1 small { font-size: 18px; }
+      .meta-grid,
+      .stats-band { grid-template-columns: 1fr; }
+      .stat-card { grid-column: span 1; }
+      .kpi-grid { grid-template-columns: 1fr 1fr; }
+      .timeline-item { padding-left: 62px; }
+      .timeline-dot { left: 18px; }
+      .timeline-item::before { left: 28px; }
+      .project-title { font-size: 24px; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page { width: 100%; margin: 0; }
+      .hero, .section, .footer-banner, .card, .project-card, .matrix-card, .timeline-item {
+        box-shadow: none !important;
+      }
+      .hero, .section, .footer-banner, .project-card { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero fade-up">
+      <div>
+        <div class="eyebrow">💼 技术内容建设成果沉淀 · 2026-05-14 更新版</div>
+        <h1>
+          Mary 工作成果总结
+          <small>徐麦瑞｜数据库-产品运营（实际工作：技术内容开发）</small>
+        </h1>
+        <div class="hero-tags">
+          <span class="hero-tag">7年+ 技术内容建设经验</span>
+          <span class="hero-tag">4.5年 字节跳动数据库内容建设</span>
+          <span class="hero-tag">技术内容体系 / API 文档 / 国际化 / AI 提效</span>
+          <span class="hero-tag">离线可用 · 单文件 HTML</span>
+        </div>
+        <div class="meta-grid">
+          <div class="meta-item">
+            <div class="meta-label">所属部门</div>
+            <div class="meta-value">数据库-产品运营</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">实际工作</div>
+            <div class="meta-value">技术内容开发</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">核心覆盖</div>
+            <div class="meta-value">Redis / MongoDB / HBase / veGraph / Mem0</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">工作城市</div>
+            <div class="meta-value">杭州</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-side">
+        <div class="profile-card fade-up delay-1">
+          <div class="avatar">M</div>
+          <div class="profile-title">Mary（徐麦瑞）</div>
+          <div class="profile-subtitle">7年+ 技术内容建设经验｜技术内容专家 / 技术文档工程师 / 技术内容运营</div>
+          <div class="quote">“把复杂产品能力转化成用户真正看得懂、用得上的内容，并让这套内容可协作、可复用、可规模化交付。”</div>
+        </div>
+        <div class="highlight-card fade-up delay-2">
+          <div class="profile-title" style="font-size:18px; margin-bottom:12px;">✨ 核心亮点速览</div>
+          <div class="kpi-grid">
+            <div class="kpi-box"><strong>50%</strong><span>API 文档协作效率提升</span></div>
+            <div class="kpi-box"><strong>3端</strong><span>中英多站点同步发布</span></div>
+            <div class="kpi-box"><strong>10+</strong><span>混合云版本按期交付</span></div>
+            <div class="kpi-box"><strong>3000+</strong><span>阿里云数据库文档新增/优化/修复</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section fade-up delay-1">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">📌 核心数据亮点</h2>
+        </div>
+      </div>
+      <div class="stats-band">
+        <div class="stat-card">
+          <strong>7年+</strong>
+          <span>技术内容建设经验</span>
+          <p>覆盖用户文档、API 文档、知识库、FAQ、最佳实践、UI 文案与国际化内容体系。</p>
+        </div>
+        <div class="stat-card">
+          <strong>4.5年</strong>
+          <span>字节跳动数据库产品线经历</span>
+          <p>长期支撑 NoSQL 与相关数据库产品的技术内容建设与跨团队协同。</p>
+        </div>
+        <div class="stat-card">
+          <strong>50%</strong>
+          <span>API 文档协作效率提升</span>
+          <p>通过质量前置、APIHub 接入与模板化生成，减少重复维护与返工。</p>
+        </div>
+        <div class="stat-card">
+          <strong>3端同步</strong>
+          <span>火山中文 / 火山英文 / BytePlus 英文</span>
+          <p>推动 Redis、MongoDB 成为产品线首批实现三端同步发布的数据库产品。</p>
+        </div>
+        <div class="stat-card">
+          <strong>10+</strong>
+          <span>混合云版本交付</span>
+          <p>担任文档 Owner，统筹需求范围、里程碑、出包与归档。</p>
+        </div>
+        <div class="stat-card">
+          <strong>6款</strong>
+          <span>混合云数据库产品</span>
+          <p>支撑多产品、多版本、多角色并行协作下的文档交付管理。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section fade-up delay-1">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">🧭 角色定位与价值概括</h2>
+        </div>
+      </div>
+      <div class="intro-grid">
+        <div class="card role-summary">
+          <h3 style="margin-top:0; font-size:22px;">角色说明</h3>
+          <ul class="list">
+            <li>名片部门为 <strong>数据库-产品运营</strong>，日常工作长期聚焦 <strong>技术内容开发</strong>，不是“转型”，而是在岗位职责内持续深入专业内容建设。</li>
+            <li>工作范围覆盖文档架构设计、内容规范制定、API 文档工程化、国际化内容协同、混合云交付管理、UI 文案审校与 AI 辅助生产。</li>
+            <li>在产品、研发、QA、站点发布、平台团队之间承担连接角色，从内容视角推动定义规范、交付质量与协作效率提升。</li>
+          </ul>
+          <div class="role-badge">🎯 关键词：技术内容体系建设 / 工程化思维 / 国际化交付 / 流程与质量闭环</div>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0; font-size:22px;">价值总结</h3>
+          <ul class="list">
+            <li>不仅能“写文档”，更擅长把文档工作前移到需求、设计、接口定义和版本交付环节。</li>
+            <li>能够把复杂技术内容组织成一套可复用的资产体系，包括模板、术语库、TM、清单、SOP 和质量规则。</li>
+            <li>具备将 AI 工具嵌入实际工作流的意识和落地能力，用于需求拆解、初稿生成、术语治理、批量初检和知识资料供给。</li>
+          </ul>
+          <div class="pill-row" style="margin-top:16px;">
+            <span class="pill">文档体系建设</span>
+            <span class="pill">API 文档工程化</span>
+            <span class="pill">混合云交付管理</span>
+            <span class="pill">中英双语内容</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section fade-up delay-2">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">🕰️ 完整工作经历时间线</h2>
+          <div class="section-subtitle">从英文技术支持，到云数据库技术文档工程，再到数据库产品线技术内容体系建设，能力持续向“内容工程化 + 复杂协同”升级。</div>
+        </div>
+      </div>
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <span class="timeline-time">2021.10 — 2026.05 ｜ 4.5年</span>
+            <span class="chip">字节跳动</span>
+          </div>
+          <div class="timeline-company">字节跳动</div>
+          <div class="timeline-role">产品运营（实际工作：技术内容开发）</div>
+          <p class="timeline-desc">
+            主导火山引擎 NoSQL 数据库产品线技术内容体系建设，覆盖 Redis、MongoDB、HBase、veGraph、Mem0 等产品，长期支撑公有云、混合云、国际化与 API 文档多渠道交付。深度参与 PRD、设计评审、IDL Code Review、基础功能验证与内容质量治理，从“后置写作”升级为“前置协同 + 平台化治理 + 资产沉淀”。
+          </p>
+          <div class="timeline-achievements">
+            <span class="chip">NoSQL 产品线文档体系建设</span>
+            <span class="chip">APIHub 接入与模板化</span>
+            <span class="chip">三端国际化同步发布</span>
+            <span class="chip">混合云 10+ 版本 / 6 款产品</span>
+            <span class="chip">AI 辅助内容生产</span>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <span class="timeline-time">2020.04 — 2021.10 ｜ 1.5年</span>
+            <span class="chip">软通动力</span>
+          </div>
+          <div class="timeline-company">软通动力信息技术公司</div>
+          <div class="timeline-role">数据库技术文档工程师</div>
+          <p class="timeline-desc">
+            负责阿里云多款分析型数据库与关系型数据库产品文档建设，包括新增、优化、修复与手册架构规划，累计输出和调整 3000+ 篇文档、约 62 万字。深度协同产品与研发，持续通过用户反馈与产品变更驱动内容优化，并担任新员工导师，带动团队交付质量提升。
+          </p>
+          <div class="timeline-achievements">
+            <span class="chip">3000+ 篇文档</span>
+            <span class="chip">约 62 万字</span>
+            <span class="chip">产品反馈闭环</span>
+            <span class="chip">新员工导师</span>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <span class="timeline-time">2017.03 — 2020.03 ｜ 3年</span>
+            <span class="chip">TP-Link</span>
+          </div>
+          <div class="timeline-company">TP-Link 普联技术有限公司</div>
+          <div class="timeline-role">英语产品服务工程师（晋升 L2）</div>
+          <p class="timeline-desc">
+            负责网络通信与智能家居产品英文技术支持，覆盖热线、邮件、复杂问题处理与 FAQ 内容输出。晋升 L2 后参与培训、质控和模板流程沉淀；转后台后参与用户 Case 分析、问题归因与产研反馈，主导智能客服系统完善专项，提升用户自助问答使用率和服务体验。
+          </p>
+          <div class="timeline-achievements">
+            <span class="chip">英文技术支持</span>
+            <span class="chip">L2 晋升</span>
+            <span class="chip">培训 / 质控</span>
+            <span class="chip">智能客服优化专项</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section fade-up delay-2">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">🧠 技能矩阵与能力图谱</h2>
+          <div class="section-subtitle">围绕“内容体系建设 + 技术理解 + 国际化交付 + 流程治理 + AI 应用”五个维度构建核心能力结构。</div>
+        </div>
+      </div>
+      <div class="skill-layout">
+        <div class="matrix-card">
+          <h3>能力强项分布</h3>
+          <div class="matrix-list">
+            <div class="matrix-row">
+              <strong>技术内容体系建设</strong>
+              <div class="bar"><span style="width: 96%"></span></div>
+            </div>
+            <div class="matrix-row">
+              <strong>API 文档工程化</strong>
+              <div class="bar"><span style="width: 92%"></span></div>
+            </div>
+            <div class="matrix-row">
+              <strong>国际化内容交付</strong>
+              <div class="bar"><span style="width: 90%"></span></div>
+            </div>
+            <div class="matrix-row">
+              <strong>复杂项目统筹</strong>
+              <div class="bar"><span style="width: 88%"></span></div>
+            </div>
+            <div class="matrix-row">
+              <strong>AI 辅助内容生产</strong>
+              <div class="bar"><span style="width: 84%"></span></div>
+            </div>
+            <div class="matrix-row">
+              <strong>跨团队协同治理</strong>
+              <div class="bar"><span style="width: 90%"></span></div>
+            </div>
+          </div>
+        </div>
+        <div class="matrix-card">
+          <h3>能力标签</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">DITA / Markdown</span>
+            <span class="skill-tag">CMS 内容管理</span>
+            <span class="skill-tag">用户文档 / API 文档</span>
+            <span class="skill-tag">FAQ / 最佳实践</span>
+            <span class="skill-tag">PRD / 设计评审参与</span>
+            <span class="skill-tag">IDL Code Review</span>
+            <span class="skill-tag">APIHub 模板建设</span>
+            <span class="skill-tag">TM / 术语库建设</span>
+            <span class="skill-tag">UI 文案中英文审校</span>
+            <span class="skill-tag">混合云发版 / 出包 / 归档</span>
+            <span class="skill-tag">SOP / 清单 / 规范沉淀</span>
+            <span class="skill-tag">AI 初稿 / 术语治理 / 初检</span>
+            <span class="skill-tag">Prompt 工程</span>
+            <span class="skill-tag">RAG / 记忆体 / Agent 持续学习</span>
+            <span class="skill-tag">中英双语技术内容</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section fade-up delay-3">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">🚀 三大核心项目深化展示</h2>
+          <div class="section-subtitle">每个项目均按照“项目背景 → 三件事做法 → 可量化成果/价值”的结构展开，突出真实参与深度与能力亮点。</div>
+        </div>
+      </div>
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-top">
+            <div>
+              <div class="project-index">Project 01</div>
+              <h3 class="project-title">国际化文档同步发布与语料资产建设</h3>
+              <p class="project-desc">
+                项目背景：数据库产品国际化并不是“把中文翻译成英文”这么简单，还要保证火山中文站、火山英文站、BytePlus 英文站的版本范围、发布时间、术语表达和控制台界面体验保持一致。否则海外用户会遇到功能说明滞后、不同站点说法不一致、文档与控制台字段不匹配等问题。
+              </p>
+            </div>
+            <div class="impact-strip">
+              <span class="impact-badge">🌍 三端同步发布</span>
+              <span class="impact-badge">🧾 TM / 术语库建设</span>
+              <span class="impact-badge">🖥️ UI 文案审校</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="do-grid">
+              <div class="do-card">
+                <h4>一、推动多站点同步进入产品版本节奏</h4>
+                <p>与产品、研发、站点发布团队对齐版本范围、文档清单、翻译周期、审校节点与上线时间，推动 Redis 与 MongoDB 成为数据库产品线首批实现火山中文、火山英文、BytePlus 英文三端同步发布的产品，让国际化内容交付不再滞后于产品能力上线。</p>
+              </div>
+              <div class="do-card">
+                <h4>二、主导 TM 与术语库建设，统一多触点表达</h4>
+                <p>围绕产品名、功能名、技术概念、控制台字段和高频表达建立翻译记忆库与术语库，降低不同文档、不同译者、不同渠道之间的术语偏差，提高翻译复用效率与表达稳定性。</p>
+              </div>
+              <div class="do-card">
+                <h4>三、负责控制台 UI 文案中英文审校，打通“文档—界面—操作路径”一致性</h4>
+                <p>审校菜单名、字段名、按钮文案、提示语、错误提示和配置项说明，确保用户从阅读文档到进入控制台执行操作时，看到的是同一套概念、同一条路径、同一种表达逻辑。</p>
+              </div>
+            </div>
+            <div class="result-panel">
+              <h4>项目成果与价值</h4>
+              <div class="metric-grid">
+                <div class="metric-box">
+                  <strong>3端</strong>
+                  <span>火山中文 / 火山英文 / BytePlus 英文同步发布</span>
+                </div>
+                <div class="metric-box">
+                  <strong>2款</strong>
+                  <span>Redis、MongoDB 率先完成三端同步机制落地</span>
+                </div>
+              </div>
+              <ul class="project-points" style="margin-top:14px;">
+                <li>提升国际化内容交付同步性，减少英文站点更新滞后问题。</li>
+                <li>提升术语准确性与一致性，降低用户在文档、控制台、API 等多个触点的理解成本。</li>
+                <li>将国际化工作从“翻译任务”升级为“语料资产建设 + 跨团队协同 + 发布治理”。</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <div>
+              <div class="project-index">Project 02</div>
+              <h3 class="project-title">API 文档工程化与质量闭环</h3>
+              <p class="project-desc">
+                项目背景：数据库 API 数量多、结构复杂，且大量接口复用公共请求参数、返回结构和错误码。若完全依赖后期人工整理，容易出现字段命名不统一、错误码表达不清晰、公共结构重复维护、文档与接口定义不一致等问题，既影响开发者体验，也增加跨团队返工成本。
+              </p>
+            </div>
+            <div class="impact-strip">
+              <span class="impact-badge">🔍 质量前置</span>
+              <span class="impact-badge">🧩 APIHub 接入</span>
+              <span class="impact-badge">📈 协作效率 +50%</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="do-grid">
+              <div class="do-card">
+                <h4>一、把质量检查前置到 PRD / 设计 / IDL 阶段</h4>
+                <p>深度参与 PRD、设计稿与 IDL Code Review，从接口定义层检查字段命名、参数含义、数据类型、错误码文案和公共结构设计是否规范。把文档质量问题从“发布前修文案”提前到“接口定义源头治理”。</p>
+              </div>
+              <div class="do-card">
+                <h4>二、推动数据库产品接入 APIHub，建设模板化展示能力</h4>
+                <p>主导梳理数据库产品 API 元数据消费链路，推动接入 APIHub，并为平台提供 API 文档模板，使字段名称、数据类型、必填属性以及公共请求/返回结构可以基于元数据自动生成与复用，减少人工复制与多处维护。</p>
+              </div>
+              <div class="do-card">
+                <h4>三、沉淀检查清单与反馈机制，形成持续优化闭环</h4>
+                <p>将评审和平台接入过程中暴露的问题沉淀为 API 文档检查清单与反馈机制，包括字段命名规范、错误码表达规范、生成后校验点等，并持续回流 APIHub 与研发侧优化。</p>
+              </div>
+            </div>
+            <div class="result-panel">
+              <h4>项目成果与价值</h4>
+              <div class="metric-grid">
+                <div class="metric-box">
+                  <strong>50%</strong>
+                  <span>API 文档开发整体协作效率提升约 50%</span>
+                </div>
+                <div class="metric-box">
+                  <strong>源头治理</strong>
+                  <span>文档从后置交付升级为接口定义阶段协同治理</span>
+                </div>
+              </div>
+              <ul class="project-points" style="margin-top:14px;">
+                <li>减少公共结构重复维护与多处不一致问题，显著降低返工成本。</li>
+                <li>提升 API 文档一致性、准确性、可维护性和平台化扩展能力。</li>
+                <li>搭建起“评审前置—平台生成—反馈回流”的文档质量闭环机制。</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <div>
+              <div class="project-index">Project 03</div>
+              <h3 class="project-title">混合云文档项目统筹交付</h3>
+              <p class="project-desc">
+                项目背景：混合云文档并不只是在线发布，还需要满足版本交付、出包、归档、客户侧部署与 QA 验收等要求。数据库产品线涉及多产品、多版本、多负责人并行协作，如果没有统一范围管理与流程机制，风险极易在发版前集中暴露。
+              </p>
+            </div>
+            <div class="impact-strip">
+              <span class="impact-badge">📦 10+ 版本</span>
+              <span class="impact-badge">🗂️ 6款数据库产品</span>
+              <span class="impact-badge">🤖 支持 AI 评测工具</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="do-grid">
+              <div class="do-card">
+                <h4>一、建立版本维度交付管理机制</h4>
+                <p>每个版本启动时明确涉及哪些数据库产品、哪些文档需要新增或更新、对应负责人是谁、交付时间点是什么，并拆分为需求确认、初稿、评审、问题闭环、出包、归档等关键里程碑进行跟进。</p>
+              </div>
+              <div class="do-card">
+                <h4>二、维护混合云文档资料库，沉淀跨团队 SOP</h4>
+                <p>持续维护历史版本记录、交付清单、出包规范、归档路径、模板、术语和常见问题资料，并把需求输入、评审反馈、出包检查、归档要求标准化，减少重复沟通与临时返工。</p>
+              </div>
+              <div class="do-card">
+                <h4>三、为 QA 自研 AI 文档评测工具提供基础资料支持</h4>
+                <p>为工具建设提供数据库术语库、写作规范、标准表达和质量规则等基础资料，并根据评测结果持续反馈误判、漏判和规则优化建议，帮助 AI 更准确识别术语不一致、格式不规范等问题。</p>
+              </div>
+            </div>
+            <div class="result-panel">
+              <h4>项目成果与价值</h4>
+              <div class="metric-grid">
+                <div class="metric-box">
+                  <strong>10+</strong>
+                  <span>按期完成混合云版本发版、出包与归档</span>
+                </div>
+                <div class="metric-box">
+                  <strong>6款</strong>
+                  <span>数据库产品实现跨版本、跨角色统筹管理</span>
+                </div>
+              </div>
+              <ul class="project-points" style="margin-top:14px;">
+                <li>沉淀复杂项目交付方法，提升范围清晰度、节奏稳定性和可追溯性。</li>
+                <li>将文档交付从“写完即可”升级为“交付管理 + 知识资产管理 + 质量标准治理”。</li>
+                <li>为 AI 质检能力建设提供高质量领域知识输入，增强工具可用性。</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section fade-up delay-3">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">💡 方法论与能力亮点补充</h2>
+          <div class="section-subtitle">除了三大核心项目，页面也补充呈现简历中的长期能力积累，帮助完整理解她的专业优势。</div>
+        </div>
+      </div>
+      <div class="intro-grid">
+        <div class="card">
+          <h3 style="margin-top:0; font-size:22px;">长期能力积累</h3>
+          <ul class="list">
+            <li><strong>技术内容体系建设：</strong>熟悉用户文档、API 文档、FAQ、最佳实践、知识库、UI 文案等内容类型，可进行架构设计、规范制定与持续运营。</li>
+            <li><strong>技术理解与验证：</strong>能够结合云数据库场景理解产品逻辑，并通过评审、配置验证、功能验证和用户反馈分析提升内容准确性。</li>
+            <li><strong>国际化与标准化：</strong>具备中英技术内容撰写、翻译审校、术语治理与国际化发布经验，能够支持全球化内容建设。</li>
+            <li><strong>项目推进与质量闭环：</strong>擅长跨团队协同、SOP 建设、质量清单沉淀、资料库管理、外包协作和问题回流优化。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0; font-size:22px;">AI 应用特色</h3>
+          <ul class="list">
+            <li>将 AI 用于需求拆解、结构化输入、竞品检索、AI 初稿生成、术语治理和内容初检，帮助缩短从需求到初稿的链路。</li>
+            <li>理解 Prompt 工程、RAG、记忆体、Agent 等方向，能够把持续学习转化为工作场景中的可用方法。</li>
+            <li>在混合云和数据库产品场景中，为 AI 文档评测能力建设提供领域知识、术语和规范输入，发挥“内容专家 + 工具协同者”的双重价值。</li>
+          </ul>
+          <div class="pill-row" style="margin-top:16px;">
+            <span class="pill">AI 初稿生成</span>
+            <span class="pill">术语治理</span>
+            <span class="pill">质量初检</span>
+            <span class="pill">知识资料供给</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section fade-up delay-4">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">🎓 教育背景与证书</h2>
+          <div class="section-subtitle">英语专业背景叠加长期技术内容实践，是她能够稳定承接双语内容与国际化项目的重要基础。</div>
+        </div>
+      </div>
+      <div class="cert-grid">
+        <div class="card edu-card">
+          <h3>教育背景</h3>
+          <div class="edu-list">
+            <div class="edu-item">
+              <strong>中南财经政法大学｜英语专业（本科）</strong><br />
+              2013.09 — 2017.07 ｜ GPA 3.75
+            </div>
+          </div>
+        </div>
+        <div class="card cert-card">
+          <h3>证书与荣誉</h3>
+          <div class="cert-list">
+            <div class="cert-item"><strong>阿里云 ACP 认证</strong>｜数据库相关专业能力背书</div>
+            <div class="cert-item"><strong>TEM-8 / TEM-4 / CET-6</strong>｜双语技术内容与国际化协作基础</div>
+            <div class="cert-item"><strong>优秀毕业生代表 / 校优秀学生干部 / 国家励志奖学金</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer-banner fade-up delay-4">
+      <h2>谢谢这段认真走过的技术内容建设旅程</h2>
+      <p>
+        这份页面在原有基础上做了全面深化：补全完整职业时间线，强化核心数据亮点，新增技能矩阵，并对三个代表性项目进行了背景、做法、成果三级展开。它更准确地呈现了 Mary 在「数据库-产品运营」组织归属下，长期以技术内容开发为核心的真实工作价值，也更完整地体现出她在技术内容体系建设、国际化交付、API 文档工程化和 AI 辅助生产方面的能力沉淀。
+      </p>
+      <div class="footer-note">💜 页面保留蓝紫渐变视觉风格，支持本地离线打开、截图展示与打印留存。</div>
+      <div class="print-hint">本文件为单 HTML 离线页面，CSS 已全部内嵌，无外部依赖。</div>
+    </footer>
+  </main>
+</body>
+</html>
