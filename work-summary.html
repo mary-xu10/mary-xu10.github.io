@@ -792,6 +792,55 @@
       color: rgba(255,255,255,.78);
     }
 
+    .hobby-intro {
+      margin: 0 0 18px;
+      max-width: 760px;
+      font-size: 15px;
+      color: rgba(255,255,255,.92);
+    }
+
+    .hobby-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .hobby-card {
+      padding: 20px;
+      border-radius: 22px;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.22);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 12px 24px rgba(66, 78, 180, .12);
+    }
+
+    .hobby-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+      background: rgba(255,255,255,.16);
+      margin-bottom: 12px;
+    }
+
+    .hobby-card h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      color: #fff;
+    }
+
+    .hobby-card p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.75;
+      color: rgba(255,255,255,.9);
+    }
+
     .fade-up {
       opacity: 0;
       transform: translateY(18px);
@@ -842,6 +891,7 @@
       .timeline-dot { left: 18px; }
       .timeline-item::before { left: 28px; }
       .project-title { font-size: 24px; }
+      .hobby-grid { grid-template-columns: 1fr; }
     }
 
     @media print {
@@ -1334,12 +1384,32 @@
     </section>
 
     <footer class="footer-banner fade-up delay-4">
-      <h2>谢谢这段认真走过的技术内容建设旅程</h2>
-      <p>
-        这份页面在原有基础上做了全面深化：补全完整职业时间线，强化核心数据亮点，新增技能矩阵，并对三个代表性项目进行了背景、做法、成果三级展开。它更准确地呈现了 Mary 在「数据库-产品运营」组织归属下，长期以技术内容开发为核心的真实工作价值，也更完整地体现出她在技术内容体系建设、国际化交付、API 文档工程化和 AI 辅助生产方面的能力沉淀。
+      <h2>工作之外 · 关于 Mary</h2>
+      <p class="hobby-intro">
+        工作里习惯把事情拆清楚、做扎实；工作之外，也会认真留一点时间给喜欢的事。手上有点小创作，生活里有点热心肠，也会和自己的体能较劲一下，让节奏慢下来、也稳下来。
       </p>
-      <div class="footer-note">💜 页面保留蓝紫渐变视觉风格，支持本地离线打开、截图展示与打印留存。</div>
-      <div class="print-hint">本文件为单 HTML 离线页面，CSS 已全部内嵌，无外部依赖。</div>
+      <div class="hobby-grid">
+        <div class="hobby-card">
+          <div class="hobby-icon">🧵</div>
+          <h3>DIY 手工创作</h3>
+          <p>喜欢自己动手做一些小东西，享受从想法到成品一点点落地的过程。手工这件事很治愈，也让我一直保留着对细节和质感的敏感度。</p>
+        </div>
+        <div class="hobby-card">
+          <div class="hobby-icon">🤝</div>
+          <h3>公益志愿活动</h3>
+          <p>会参加一些力所能及的公益和志愿活动。对我来说，这不只是“抽空去做一件好事”，更像是在提醒自己：保持对人、对周围世界的关注。</p>
+        </div>
+        <div class="hobby-card">
+          <div class="hobby-icon">💪</div>
+          <h3>平板支撑</h3>
+          <p>给自己定过平板支撑的小挑战。它看起来简单，其实特别考验耐心和稳定性，这一点和很多长期项目还挺像——不是拼一下，而是稳稳坚持住。</p>
+        </div>
+        <div class="hobby-card">
+          <div class="hobby-icon">🧘</div>
+          <h3>瑜伽</h3>
+          <p>瑜伽是我很喜欢的一种放松方式。拉伸、呼吸、专注当下，会让人从忙碌里慢慢抽离出来，身体和心态都会更舒服一些。</p>
+        </div>
+      </div>
     </footer>
   </main>
 </body>
