@@ -901,20 +901,73 @@
         box-shadow: none !important;
       }
       .hero, .section, .footer-banner, .project-card { break-inside: avoid; }
+      .topnav { display: none; }
+    }
+
+    /* ── Sticky Tab Navigation ── */
+    .topnav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      width: 100%;
+      background: rgba(238, 242, 255, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(96, 91, 236, 0.12);
+      display: flex;
+      justify-content: center;
+      padding: 0 24px;
+    }
+
+    .topnav-inner {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+      width: min(100%, 1200px);
+      padding: 10px 0;
+    }
+
+    .topnav a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 500;
+      padding: 7px 18px;
+      border-radius: 999px;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .topnav a:hover {
+      color: var(--indigo);
+      background: rgba(96, 91, 236, 0.08);
+    }
+
+    .topnav a.active {
+      color: white;
+      background: linear-gradient(135deg, var(--indigo), var(--violet));
+      box-shadow: 0 4px 14px rgba(96, 91, 236, 0.3);
     }
   </style>
 </head>
 <body>
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a href="#stats">核心数据</a>
+      <a href="#timeline">工作经历</a>
+      <a href="#projects">关键项目</a>
+      <a href="#skills">技能矩阵</a>
+    </div>
+  </nav>
   <main class="page">
     <section class="hero fade-up">
       <div>
-        <div class="eyebrow">💼 技术内容建设成果沉淀 · 2026-05-14 更新版</div>
         <h1>
           Mary 工作成果总结
           <small>徐麦瑞｜数据库-产品运营（实际工作：技术内容开发）</small>
         </h1>
         <div class="hero-tags">
-          <span class="hero-tag">7年+ 技术内容建设经验</span>
+          <span class="hero-tag">6年+ 技术内容建设经验</span>
           <span class="hero-tag">4.5年 字节跳动数据库内容建设</span>
           <span class="hero-tag">技术内容体系 / API 文档 / 国际化 / AI 提效</span>
         </div>
@@ -940,7 +993,7 @@
       <div class="hero-side">
         <div class="profile-card fade-up delay-1">
           <div class="profile-title">Mary（徐麦瑞）</div>
-          <div class="profile-subtitle">7年+ 技术内容建设经验｜技术内容专家 / 技术文档工程师 / 技术内容运营</div>
+          <div class="profile-subtitle">6年+ 技术内容建设经验｜技术内容专家 / 技术文档工程师 / 技术内容运营</div>
           <div class="quote">“把复杂产品能力转化成用户真正看得懂、用得上的内容，并让这套内容可协作、可复用、可规模化交付。”</div>
         </div>
         <div class="highlight-card fade-up delay-2">
@@ -955,7 +1008,7 @@
       </div>
     </section>
 
-    <section class="section fade-up delay-1">
+    <section id="stats" class="section fade-up delay-1">
       <div class="section-header">
         <div>
           <h2 class="section-title">📌 核心数据亮点</h2>
@@ -963,7 +1016,7 @@
       </div>
       <div class="stats-band">
         <div class="stat-card">
-          <strong>7年+</strong>
+          <strong>6年+</strong>
           <span>技术内容建设经验</span>
           <p>覆盖用户文档、API 文档、知识库、FAQ、最佳实践、UI 文案与国际化内容体系。</p>
         </div>
@@ -1028,7 +1081,7 @@
       </div>
     </section>
 
-    <section class="section fade-up delay-2">
+    <section id="timeline" class="section fade-up delay-2">
       <div class="section-header">
         <div>
           <h2 class="section-title">🕰️ 完整工作经历时间线</h2>
@@ -1095,7 +1148,7 @@
       </div>
     </section>
 
-    <section class="section fade-up delay-2">
+    <section id="skills" class="section fade-up delay-2">
       <div class="section-header">
         <div>
           <h2 class="section-title">🧠 技能矩阵与能力图谱</h2>
@@ -1154,7 +1207,7 @@
       </div>
     </section>
 
-    <section class="section fade-up delay-3">
+    <section id="projects" class="section fade-up delay-3">
       <div class="section-header">
         <div>
           <h2 class="section-title">🚀 三大核心项目深化展示</h2>
@@ -1405,5 +1458,20 @@
       </div>
     </footer>
   </main>
+  <script>
+    const navLinks = document.querySelectorAll('.topnav a');
+    const sections = ['stats','timeline','projects','skills'].map(id => document.getElementById(id));
+    function updateNav() {
+      let current = '';
+      sections.forEach(sec => {
+        if (sec && window.scrollY >= sec.offsetTop - 80) current = sec.id;
+      });
+      navLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+      });
+    }
+    window.addEventListener('scroll', updateNav, { passive: true });
+    updateNav();
+  </script>
 </body>
 </html>
